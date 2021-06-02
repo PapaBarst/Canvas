@@ -2,6 +2,7 @@
 Canvas is a simple, open-source tool for drawing shapes and images in C#. The goal of this program is to provide an intuitive, easy to use drawing interface for people new to coding in C#, while still allowing higher level manipulation and functionality. 
 
 **Canvas can be installed directly from NuGet using a package manager.**
+
 See Canvas on NuGet here: https://www.nuget.org/packages/PapaBarst.Canvas/
 
 # Startup
