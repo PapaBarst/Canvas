@@ -85,7 +85,7 @@ namespace Canvas
         /// <para>The layer that objects are added to by <c>Draw(c)</c> and other similar methods</para>
         /// <remarks>If changing the layer stack and this property directly, make sure to have this property always set to an existent layer</remarks>
         /// </summary>
-        internal Layer targetedLayer;
+        public Layer targetedLayer;
         /// <summary>
         /// <para>The background layer. By default on the bottom of the layer stack.</para>
         /// <remarks>Objects in this layer are not removed when the window is redrawn. </remarks>
