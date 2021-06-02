@@ -1,6 +1,9 @@
 # Canvas
 Canvas is a simple, open-source tool for drawing shapes and images in C#. The goal of this program is to provide an intuitive, easy to use drawing interface for people new to coding in C#, while still allowing higher level manipulation and functionality. 
 
+**Canvas can be installed directly from NuGet using a package manager.**
+See Canvas on NuGet here: https://www.nuget.org/packages/PapaBarst.Canvas/
+
 # Startup
 To create an instance of Canvas, begin by extending the CBase class in a class of your own. Next, implement the abstract methods `Draw()` , `DrawOnce()`, and `Setup()` (blank is fine). Finally, add `CBase.Main("namespace", "className")` to your `static void Main` or the entry point of the application.
 
