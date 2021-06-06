@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Canvas
 {
-    public abstract class PolygonC : Drawable
+    public class PolygonC : Drawable
     {
         protected List<PointF> points;
         protected PointF center;

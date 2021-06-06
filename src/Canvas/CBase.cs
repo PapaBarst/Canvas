@@ -15,7 +15,7 @@ namespace Canvas
     /// <para>To create a Canvas instance, extend this class and run <c>CBase.Main</c> with its 
     /// required parameters inside a <c>public static void Main()</c>
     /// </para>
-    /// <remarks>For additional documentation, visit [incomplete]</remarks>
+    /// <remarks>For additional documentation, visit https://github.com/PapaBarst/Canvas </remarks>
     /// </summary>
     public abstract class CBase
     {
@@ -178,6 +178,7 @@ namespace Canvas
         /// <param name="y"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
+        /// <param name="fillColor"></param>
         /// <returns></returns>
         public RectangleP Rectangle(float x, float y, float width, float height, Color fillColor)
         {
@@ -194,6 +195,8 @@ namespace Canvas
         /// <param name="y"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
+        /// <param name="fillColor"></param>
+        /// <param name="borderColor"></param>
         /// <returns></returns>
         public RectangleP Rectangle(float x, float y, float width, float height, Color fillColor, Color borderColor)
         {
@@ -209,6 +212,8 @@ namespace Canvas
         /// </summary>
         /// <param name="p1"></param>
         /// <param name="p2"></param>
+        /// <param name="fillColor"></param>
+        /// <param name="borderColor"></param>
         /// <returns></returns>
         public RectangleP Rectangle(PointF p1, PointF p2, Color fillColor, Color borderColor)
         {
@@ -222,10 +227,8 @@ namespace Canvas
         /// Creates a new <c>RectangleP</c>, adds it to the drawstack, and returns it for potential use later.
         /// </summary>
         /// <remarks>Defines a new rectangle by two points serving as bounds</remarks>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
         /// <returns></returns>
         public RectangleP Rectangle(PointF p1, PointF p2)
         {
@@ -266,6 +269,7 @@ namespace Canvas
         /// <param name="y"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
+        /// <param name="fillColor"></param>
         /// <returns></returns>
         public EllipseC Ellipse(float x, float y, float width, float height, Color fillColor)
         {
@@ -282,6 +286,8 @@ namespace Canvas
         /// <param name="y"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
+        /// <param name="fillColor"></param>
+        /// <param name="borderColor"></param>
         /// <returns></returns>
         public EllipseC Ellipse(float x, float y, float width, float height, Color fillColor, Color borderColor)
         {
@@ -297,6 +303,8 @@ namespace Canvas
         /// <remarks>Defines a new ellipse by two points serving as bounds</remarks>
         /// <param name="p1"></param>
         /// <param name="p2"></param>
+        /// <param name="fillColor"></param>
+        /// <param name="borderColor"></param>
         /// <returns></returns>
         public EllipseC Ellipse(PointF p1, PointF p2, Color fillColor, Color borderColor)
         {
@@ -342,6 +350,8 @@ namespace Canvas
         /// Creates a new <c>DrawableImage</c> with the given filepath, adds it to the drawstack, and returns it for potential use later.
         /// </summary>
         /// <remarks>Defines an image with the image's default width and height at the given x and y coordinates.</remarks>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         /// <param name="FilePath"></param>
         /// <returns></returns>
         public DrawableImage Image(float x, float y, string FilePath)
@@ -354,6 +364,10 @@ namespace Canvas
         /// Creates a new <c>DrawableImage</c> with the given filepath, adds it to the drawstack, and returns it for potential use later.
         /// </summary>
         /// <remarks>Defines an image with the given width and height at the given x and y coordinates.</remarks>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         /// <param name="FilePath"></param>
         /// <returns></returns>
         public DrawableImage Image(float x, float y, int width, int height, string FilePath)

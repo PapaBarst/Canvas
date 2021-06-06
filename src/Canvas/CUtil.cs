@@ -9,8 +9,17 @@ using System.Threading.Tasks;
 
 namespace Canvas
 {
+    /// <summary>
+    /// A collection of random util used in Canvas. 
+    /// </summary>
     public class CUtil
     {
+        /// <summary>
+        /// Returns a standard angle for the given width and height of a triangle.
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static double GetAngle(float width, float height)
         {
             height *= -1;
@@ -28,6 +37,13 @@ namespace Canvas
         }
 
         //code below stolen from stack overflow
+        /// <summary>
+        /// Resizes an image to the given width and height. Shamelessly stolen from stack overflow.
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static Bitmap ResizeImage(Image image, int width, int height)
         {
             var destRect = new Rectangle(0, 0, width, height);

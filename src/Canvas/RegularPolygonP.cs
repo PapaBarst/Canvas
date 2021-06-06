@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Canvas
 {
-    class RegularPolygonP : PolygonP
+    public class RegularPolygonP : PolygonP
     {
         private int faces;
         private double displacement;

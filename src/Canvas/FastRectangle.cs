@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Canvas
 {
     //A less performance heavy rectangle class that can draw multiple rectangles at one. No rotation or scaling.
-    class FastRectangle : Drawable
+    public class FastRectangle : Drawable
     {
         public List<RectangleF> rects
         {

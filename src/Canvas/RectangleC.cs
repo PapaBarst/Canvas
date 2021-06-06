@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Canvas
 {
-    class RectangleC : PolygonC
+    public class RectangleC : PolygonC
     {
         public float X
         {

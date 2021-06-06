@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Canvas
 {
-    class TriangleP : PolygonP
+    public class TriangleP : PolygonP
     {
         protected TriangleP(float x, float y) : base(x, y)
         {

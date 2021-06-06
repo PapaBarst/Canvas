@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Canvas
 {
-    class StarP : PolygonP
+    public class StarP : PolygonP
     {
         private int numPoints;
         private double displacement;
