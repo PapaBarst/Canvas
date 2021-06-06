@@ -6,7 +6,7 @@ Canvas is a simple, open-source tool for drawing shapes and images in C#. The go
 See Canvas on NuGet here: https://www.nuget.org/packages/PapaBarst.Canvas/
 
 # Startup
-Canvas runs on `.NET Framework 4.7.2`. Please make sure to set the target framework to this. Additionally, make sure that the output type is "Windows Application". The easiest way to select these settings on startup is to create a new Windows Forms application in visual studio, then delete the pre-generated classes and folloow the guide below.
+Canvas runs on `.NET Framework 4.7.2`. Please make sure to set the target framework to this. Additionally, make sure that the output type is "Windows Application". The easiest way to select these settings on startup is to create a new Windows Forms application in visual studio, then delete the pre-generated classes and follow the guide below.
 
 To create an instance of Canvas, begin by extending the CBase class in a class of your own. Next, implement the abstract methods `Draw()` , `DrawOnce()`, and `Setup()` (blank is fine). Finally, add `CBase.Main("namespace", "className")` to your `static void Main` or the entry point of the application.
 
