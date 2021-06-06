@@ -7,44 +7,90 @@ using System.Threading.Tasks;
 
 namespace Canvas
 {
-    class CurveApproximation : Drawable
+    /// <summary>
+    /// A drawable approximation of a mathematical function using NCalc. Works best with continuous functions. 
+    /// </summary>
+    public class CurveApproximation : Drawable
     {
         private PointF[] cachedPoints;
         private NCalc.Expression internalExpression;
+        /// <summary>
+        /// The list of points for the approximation, generated on creation of a <c>CurveApproximation</c> object.
+        /// </summary>
         public List<PointF> Points;
+        /// <summary>
+        /// Controls if the curve is drawn closed.
+        /// </summary>
         public bool Closed = false;
+        /// <summary>
+        /// Controls if the curve is drawn with a border.
+        /// </summary>
         public bool Border = true;
+        /// <summary>
+        /// Controls whether the approximation is forcibly scaled to fit within the <c>Width</c> and <c>Height</c> of this object.
+        /// </summary>
+        /// <remarks>Currently, changing this property after object creation does nothing.</remarks>
         public bool ForceScale = false;
-
+        /// <summary>
+        /// The X location of the <c>CurveApproximation</c>.
+        /// </summary>
         public float X
         {
             get;
             private set;
         }
+        /// <summary>
+        /// The Y location of the <c>CurveApproximation</c>.
+        /// </summary>
         public float Y
         {
             get;
             private set;
         }
+        /// <summary>
+        /// The width of the <c>CurveApproximation</c>. If no width is given on object creation, will be the width of the curve.
+        /// </summary>
+        /// <remarks>Currently, changing this property after object creation does nothing.</remarks>
         public float Width
         {
             get;
             private set;
         }
+        /// <summary>
+        /// The height of the <c>CurveApproximation</c>. If no height is given on object creation, will be the height of the curve.
+        /// </summary>
+        /// <remarks>Currently, changing this property after object creation does nothing.</remarks>
         public float Height
         {
             get;
             private set;
         }
+        /// <summary>
+        /// The fill color of the <c>CurveApproximation</c>.
+        /// </summary>
         public Color FillColor = Color.Gray;
+        /// <summary>
+        /// The border color of the <c>CurveApproximation</c>.
+        /// </summary>
         public Color BorderColor = Color.Black;
+        /// <summary>
+        /// The amount of points in the approximated curve.
+        /// </summary>
         public int NumPoints
         {
             get;
             private set;
         }
-
-        //produces
+        /// <summary>
+        /// Approximates the curve between the given x-values with the given number of points. Higher point amounts lead to higher accuracy but lower performance.
+        /// </summary>
+        /// <remarks>Formula format can be very specific. You must use the mathematical symbols, not shorthand. Refer to NCalc documentation for more info.</remarks>
+        /// <param name="posX"></param>
+        /// <param name="posY"></param>
+        /// <param name="formula"></param>
+        /// <param name="startx"></param>
+        /// <param name="endx"></param>
+        /// <param name="numPoints"></param>
         public CurveApproximation(float posX, float posY, String formula, double startx, double endx, int numPoints)
         {
             Points = new List<PointF>();
@@ -88,6 +134,18 @@ namespace Canvas
         }
 
         //this constructor forces scaling
+        /// <summary>
+        /// Approximates the curve between the given x-values with the given number of points. Scales the curve to fit the given width and height. Higher point amounts lead to higher accuracy but lower performance.
+        /// </summary>
+        /// <remarks>Formula format can be very specific. You must use mathematical symbols, not shorthand. Refer to NCalc documentation for more info.</remarks>
+        /// <param name="posX"></param>
+        /// <param name="posY"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="formula"></param>
+        /// <param name="startx"></param>
+        /// <param name="endx"></param>
+        /// <param name="numPoints"></param>
         public CurveApproximation(float posX, float posY, float width, float height, String formula, double startx, double endx, int numPoints)
         {
             Points = new List<PointF>();
@@ -132,11 +190,17 @@ namespace Canvas
             X = posX;
             Y = posY;
         }
-
+        /// <summary>
+        /// An empty curve approximation, for whatever reason. Simply initializes variables, nothing more.
+        /// </summary>
         public CurveApproximation()
         {
             Points = new List<PointF>();
         }
+        /// <summary>
+        /// Draws a curve through the listed points.
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
             if (cachedPoints == null)
